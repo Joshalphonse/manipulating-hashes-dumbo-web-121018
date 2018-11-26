@@ -14,16 +14,17 @@ def first_challenge
   }
 
   #your code here
-  contacts.each do |person,data|
-    puts "#{person}: #{data}"
-    
-      data.each do |attribute, value|
-    puts "#{attribute}: #{value}"
-    
-   end
-
+    #your code here
+  contacts.each do |key, value|
+    if key == "Freddy Mercury"
+      value.each do |attribute, val|
+        if attribute == :favorite_icecream_flavors
+          val.delete_if { |x| x == 'strawberry'}
+        end
+      end
+    end
+  end
 
   #remember to return your newly altered contacts hash!
   contacts
 end
-
